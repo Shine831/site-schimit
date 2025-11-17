@@ -18,7 +18,7 @@
   <title>Agence e‑commerce — Schimit Baha Jean Claude</title>
   <meta name="description" content="Création et gestion de boutiques Selar + accompagnement cartes Visa Neero. Contactez Schimit pour une démo rapide." />  <!-- Polices système (pas d'import obligatoire) -->  <style>
     :root{
-  --card:#f5f7fa; --card-dark:#0f1724; --accent:#0b7285; --accent-600:#096a75; --dark:#0f1724; --muted:#6b7280; --bg:#f7fafc;
+  --card: #f5f7fa; --card-dark:#0f1724; --accent:#0b7285; --accent-600:#096a75; --dark:#0f1724; --muted:#6b7280; --bg:#f7fafc;
   --radius:12px; --gap:18px; --max-width:1100px; --shadow:0 8px 30px rgba(11,114,133,0.06);
 }
 @media (prefers-color-scheme:dark){
@@ -109,6 +109,193 @@
       <div class="brand">
         <div class="logo" aria-hidden="true">SB</div>
         <div>
+          <h1>Schimit Baha Jean Claude — Agence e‑commerce</h1>
+          <div class="muted">Création & gestion de boutiques Selar · Accompagnement cartes Visa Neero</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#contact" class="cta">Demander une démo</a>
+      </nav>
+    </header><main class="grid">
+  <section>
+    <div class="card">
+      <p class="lead">Je crée et gère des boutiques en ligne prêtes à vendre sur Selar et j'accompagne les commerçants à l'utilisation des cartes Visa Neero. Vous gagnez du temps : je m'occupe de la technique, vous vous concentrez sur les ventes.</p>
+
+      <h3>Ce que je fais pour vous</h3>
+      <ul class="features">
+        <li>Création boutique Selar prête à la vente</li>
+        <li>Optimisation fiches produits et images</li>
+        <li>Configuration paiements (Mobile Money / carte)</li>
+        <li>Formation courte et support WhatsApp</li>
+        <li>Accompagnement à l'activation et l'usage des cartes Visa Neero</li>
+      </ul>
+
+      <h3 style="margin-top:14px">Packs clairs</h3>
+      <div class="packs" role="list">
+        <article class="pack" role="listitem">
+          <h3>Pack Basic</h3>
+          <div class="price">Installation 50 000 FCFA · 10 000 FCFA / mois</div>
+          <ul>
+            <li>Jusqu'à 10 produits</li>
+            <li>Template professionnel</li>
+            <li>Formation 20–30 min</li>
+            <li>Support standard (WhatsApp / e‑mail)</li>
+          </ul>
+        </article>
+
+        <article class="pack" role="listitem">
+          <h3>Pack Pro</h3>
+          <div class="price">Installation 100 000 FCFA · 25 000 FCFA / mois</div>
+          <ul>
+            <li>Jusqu'à 50 produits optimisés</li>
+            <li>5 visuels marketing</li>
+            <li>Support 24h et gestion commandes</li>
+            <li>Reporting mensuel détaillé</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 style="margin-top:12px">Preuve sociale</h3>
+      <p class="muted">Démonstrations et pilotes à tarif réduit disponibles — idéal pour tester le service sans risque.</p>
+
+      <h3 style="margin-top:12px">Pourquoi travailler avec moi</h3>
+      <ul>
+        <li>Processus simple, aucun savoir technique requis</li>
+        <li>Livrables rapides et concrets</li>
+        <li>Accompagnement direct via WhatsApp</li>
+      </ul>
+    </div>
+
+    <div style="margin-top:14px" class="card">
+      <h3>Questions fréquentes</h3>
+      <p class="muted">Frais d'émission des cartes Neero à la charge du client. Notre service couvre l'accompagnement technique et la formation.</p>
+    </div>
+  </section>
+
+  <aside id="contact">
+    <div class="card" aria-labelledby="contactHeading">
+      <h3 id="contactHeading">Contactez Schimit</h3>
+      <p class="muted">Remplissez le formulaire ci‑dessous ou envoyez un message WhatsApp directement. Les messages reçus via e‑mail ou WhatsApp sont traités sous 24h.</p>
+
+      <form id="contactForm" aria-describedby="formStatus" novalidate>
+        <label for="name">Nom complet</label>
+        <input id="name" name="name" type="text" required placeholder="Votre nom complet" aria-required="true" />
+
+        <label for="email">Adresse e‑mail</label>
+        <input id="email" name="email" type="email" required placeholder="votre@exemple.com" value="jcbaha58@gmail.com" />
+
+        <label for="phone">Téléphone (WhatsApp)</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" pattern="^\\+?[0-9\s-]{7,20}$" placeholder="+2376XXXXXXXX" value="+237699477055" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Dites-moi ce que vous vendez ou demandez une démo" required></textarea>
+
+        <button type="submit" class="primary">Envoyer par e‑mail</button>
+
+        <div id="formStatus" class="muted" style="margin-top:10px" aria-live="polite"></div>
+      </form>
+
+      <div style="margin-top:12px;display:flex;gap:8px;flex-direction:column">
+        <a id="waBtn" class="whatsapp" href="#" target="_blank" rel="noopener">Envoyer un message WhatsApp</a>
+
+        <div class="card" style="padding:10px;display:flex;flex-direction:column;gap:8px">
+          <h4 style="margin:0">Coordonnées</h4>
+          <div class="muted">
+            Schimit Baha Jean Claude<br/>
+            WhatsApp: <span id="phoneDisplay">+237699477055</span>
+            &nbsp;<button class="copy-btn" id="copyPhone" title="Copier le numéro">📋</button>
+            <br/>
+            E‑mail: <span id="emailDisplay">jcbaha58@gmail.com</span>
+            &nbsp;<button class="copy-btn" id="copyEmail" title="Copier l'e‑mail">📋</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+</main>
+
+<footer>
+  © Schimit Baha Jean Claude — Agence e‑commerce. Page créée pour démo. Remplacez textes si besoin.
+</footer>
+
+  </div>  <script>
+    (function(){
+      const form = document.getElementById('contactForm');
+      const statusEl = document.getElementById('formStatus');
+      const waBtn = document.getElementById('waBtn');
+
+      const contactEmail = document.getElementById('email').value.trim() || 'jcbaha58@gmail.com';
+      const contactPhone = document.getElementById('phone').value.trim() || '+237699477055';
+
+      // Pre-fill WhatsApp link with a short message; will be updated on submit too
+      function buildWhatsAppLink(name, phoneInput, message){
+        const to = phoneInput.replace(/[^0-9+]/g, ''); // leave only digits or +
+        const text = `Bonjour, je m'appelle ${name || '[Votre nom]'} - ${message || 'Je souhaite une démo de votre service.'}`;
+        return `https://wa.me/${to.replace(/^\+/, '')}?text=${encodeURIComponent(text)}`;
+      }
+      waBtn.href = buildWhatsAppLink('', contactPhone, 'Bonjour, je souhaite une démo');
+
+      // Copy buttons
+      document.getElementById('copyPhone').addEventListener('click', function(){
+        navigator.clipboard && navigator.clipboard.writeText(document.getElementById('phoneDisplay').textContent.trim())
+          .then(()=>{statusEl.textContent='Numéro copié dans le presse‑papier.'})
+          .catch(()=>{statusEl.textContent='Impossible de copier — copiez manuellement.'});
+      });
+      document.getElementById('copyEmail').addEventListener('click', function(){
+        navigator.clipboard && navigator.clipboard.writeText(document.getElementById('emailDisplay').textContent.trim())
+          .then(()=>{statusEl.textContent='E‑mail copié dans le presse‑papier.'})
+          .catch(()=>{statusEl.textContent='Impossible de copier — copiez manuellement.'});
+      });
+
+      // Helper to validate simple fields
+      function validate(formData){
+        if(!formData.get('name') || !formData.get('message')) return 'Merci de renseigner votre nom et un message.';
+        const email = formData.get('email');
+        if(email && !/^\S+@\S+\.\S+$/.test(email)) return 'Adresse e‑mail invalide.';
+        return '';
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        statusEl.textContent = '';
+
+        const fd = new FormData(form);
+        const validationError = validate(fd);
+        if(validationError){ statusEl.textContent = validationError; return; }
+
+        const name = fd.get('name').trim();
+        const email = fd.get('email').trim();
+        const phone = fd.get('phone').trim();
+        const message = fd.get('message').trim();
+
+        // Construct mailto safely
+        const subject = `Demande de demo – Agence Schimit Baha Jean Claude`;
+        const bodyPlain = `Nom: ${name}\nEmail: ${email}\nWhatsApp: ${phone}\n\nMessage:\n${message}`;
+        const mailto = `mailto:${encodeURIComponent(contactEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyPlain)}`;
+
+        // Update WhatsApp button so user can continue to WA if desired
+        waBtn.href = buildWhatsAppLink(name, phone || contactPhone, message);
+
+        // Try to open mail client (this will work when a mail client is configured)
+        // Use window.open to keep page visible on some platforms
+        try{
+          window.open(mailto);
+          statusEl.textContent = "Votre client-mail s'ouvre. Si rien ne se passe, cliquez sur 'Envoyer un message WhatsApp' ou copiez les coordonnées.";
+        }catch(err){
+          statusEl.textContent = "Impossible d'ouvrir automatiquement l'application mail. Utilisez le bouton WhatsApp ou copiez l'e‑mail.";
+        }
+      });
+
+      // Improve UX: if user changes phone/email, update display and wa link
+      document.getElementById('phone').addEventListener('input', function(){
+        const v = this.value.trim(); document.getElementById('phoneDisplay').textContent = v || contactPhone; waBtn.href = buildWhatsAppLink(document.getElementById('name').value.trim(), v || contactPhone, 'Bonjour');
+      });
+      document.getElementById('email').addEventListener('input', function(){ document.getElementById('emailDisplay').textContent = this.value.trim() || contactEmail; });
+
+    })();
+  </script></body>
+               </html>        <div>
           <h1>Schimit Baha Jean Claude — Agence e‑commerce</h1>
           <div class="muted">Création & gestion de boutiques Selar · Accompagnement cartes Visa Neero</div>
         </div>
