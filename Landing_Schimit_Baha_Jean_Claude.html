@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Schimit — Boutiques en ligne clé en main & accompagnement</title>
+  <meta name="description" content="Boutiques prêtes à vendre : création, gestion, analyse et accompagnement. Pack complet + cartes Visa virtuelles et partenariats publicitaires." />
+  <meta name="theme-color" content="#0b7285" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5YZGFKCXC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H5YZGFKCXC', { 'send_page_view': true });
+  </script>
+
+  <style>
+    /* ---------- Design system ---------- */
+    :root{
+      --accent:#0b7285;
+      --accent-2:#06b6d4;
+      --bg:#071223;
+      --card:#0f1a24;
+      --muted:#9aa6b2;
+      --glass: rgba(255,255,255,0.03);
+      --white:#e6eef3;
+      --radius:14px;
+      --container:1100px;
+      --max-form-width:420px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6fbfc;
+        --card:#ffffff;
+        --muted:#6b7280;
+        --white:#0f1724;
+        --glass: rgba(11,114,133,0.03);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#041627 140%);color:var(--white);font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased;line-height:1.4}
+    a{color:inherit}
+    .wrap{max-width:var(--container);margin:28px auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px}
+    h1{margin:0;font-size:18px}
+    .tagline{color:var(--muted);font-size:13px}
+
+    .nav-cta{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;font-weight:700;text-decoration:none;cursor:pointer;border:0}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 30px rgba(6,22,30,0.35)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
+
+    /* Hero grid */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:22px;margin-top:18px;align-items:start}
+    .card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(2,6,23,0.18);border:1px solid rgba(255,255,255,0.03)}
+    .kicker{font-size:13px;color:var(--accent-2);font-weight:700}
+    .h1-large{font-size:28px;margin:8px 0 6px}
+    .lead{color:var(--muted);margin-bottom:14px}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .feature{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.02)}
+    .feature strong{display:block;margin-bottom:6px}
+
+    /* Pricing */
+    .packs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .pack{padding:16px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.02);min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+    .price{color:var(--accent);font-weight:800;font-size:18px}
+    .muted{color:var(--muted)}
+
+    /* Aside / contact form */
+    aside{position:relative}
+    form label{display:block;font-size:13px;margin-top:10px;color:var(--muted)}
+    input,textarea,select{width:100%;padding:12px;margin-top:8px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white);font-size:14px}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,0.4)}
+    .primary{width:100%;margin-top:12px;padding:12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:800;cursor:pointer}
+    .whatsapp{display:inline-flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:#25D366;color:white;text-decoration:none;font-weight:700}
+
+    .contact-meta{margin-top:12px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);font-size:14px}
+
+    /* Extras */
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .badge{background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-weight:700;font-size:13px}
+
+    /* Trust & process */
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+    .step{padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+
+    .faq{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* small screens */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .packs{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .process{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      .packs{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr}
+      .logo{width:56px;height:56px}
+      .h1-large{font-size:22px}
+    }
+
+    /* subtle animations */
+    .pack, .feature, .step { transition: transform .22s ease, box-shadow .22s ease; }
+    .pack:hover, .feature:hover, .step:hover { transform: translateY(-6px); box-shadow:0 18px 40px rgba(2,6,23,0.25); }
+    .btn-primary:hover { transform: translateY(-3px); }
+
+    /* accessibility focus */
+    :focus{outline-offset:3px}
+    a:focus,button:focus,input:focus,textarea:focus{box-shadow:0 0 0 4px rgba(11,114,133,0.12)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">SB</div>
+        <div>
+          <h1>Schimit — Boutiques prêtes à vendre</h1>
+          <div class="tagline">Création, gestion et accompagnement pour vendre en ligne — simple et efficace.</div>
+        </div>
+      </div>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#packs" aria-label="Voir les offres">Offres</a>
+        <a class="btn btn-primary" id="demoBtn" href="#contact" aria-label="Demander une démo">Demander une démo</a>
+      </div>
+    </header>
+
+    <main class="hero" role="main">
+      <!-- Left -->
+      <section class="card" aria-labelledby="heroTitle">
+        <div class="kicker">Service clé en main</div>
+        <h2 id="heroTitle" class="h1-large">Boutique prête à vendre en 3–7 jours<br><span class="muted" style="font-weight:600">Je m'occupe de la technique — vous vendez.</span></h2>
+
+        <p class="lead">Je conçois votre boutique, optimise les fiches produit, configure les paiements et gère les commandes. J’offre aussi l’activation de cartes Visa virtuelles, des analyses régulières de performance et la mise en place de campagnes publicitaires via des partenariats d’influence.</p>
+
+        <div class="features" aria-hidden="false">
+          <div class="feature">
+            <strong>Lancement rapide</strong>
+            <div class="muted">Boutique configurée et prête à vendre en quelques jours.</div>
+          </div>
+          <div class="feature">
+            <strong>Analyse & reporting</strong>
+            <div class="muted">Rapports clairs, pistes d'optimisation et suivi des ventes.</div>
+          </div>
+          <div class="feature">
+            <strong>Cartes Visa virtuelles</strong>
+            <div class="muted">Création & assistance pour recevoir paiements et gérer dépenses.</div>
+          </div>
+        </div>
+
+        <div class="packs" id="packs" aria-hidden="false">
+          <article class="pack" aria-labelledby="starterTitle">
+            <div>
+              <h3 id="starterTitle">Starter</h3>
+              <div class="price">Installation : 40 000 FCFA</div>
+              <div class="muted">Abonnement : 8 000 FCFA / mois</div>
+              <ul class="muted" style="margin-top:10px;margin-left:14px">
+                <li>Jusqu'à 15 produits</li>
+                <li>Template pro & formation</li>
+                <li>Support standard</li>
+              </ul>
+            </div>
+            <div style="margin-top:10px">
+              <a class="btn btn-primary" href="#contact" onclick="selectPlan('Starter')">Choisir Starter</a>
+            </div>
+          </article>
+
+          <article class="pack" aria-labelledby="proTitle">
+            <div>
+              <h3 id="proTitle">Pro</h3>
+              <div class="price">Installation : 80 000 FCFA</div>
+              <div class="muted">Abonnement : 20 000 FCFA / mois</div>
+              <ul class="muted" style="margin-top:10px;margin-left:14px">
+                <li>Jusqu'à 80 produits optimisés</li>
+                <li>5 visuels marketing</li>
+                <li>Gestion commandes prioritaire</li>
+              </ul>
+            </div>
+            <div style="margin-top:10px">
+              <a class="btn btn-primary" href="#contact" onclick="selectPlan('Pro')">Choisir Pro</a>
+            </div>
+          </article>
+
+          <article class="pack" aria-labelledby="premTitle">
+            <div>
+              <h3 id="premTitle">Premium</h3>
+              <div class="price">Installation : 150 000 FCFA</div>
+              <div class="muted">Abonnement : 45 000 FCFA / mois</div>
+              <ul class="muted" style="margin-top:10px;margin-left:14px">
+                <li>Catalogue complet & automations</li>
+                <li>10 visuels & photos pro</li>
+                <li>Support 24/7 + reporting avancé</li>
+              </ul>
+            </div>
+            <div style="margin-top:10px">
+              <a class="btn btn-primary" href="#contact" onclick="selectPlan('Premium')">Choisir Premium</a>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="#contact" onclick="selectPlan('Pro')">Je veux une démo</a>
+          <a class="btn btn-ghost" href="#process">Comment ça marche</a>
+        </div>
+
+        <div class="badges" aria-hidden="false">
+          <div class="badge">Accompagnement paiements</div>
+          <div class="badge">Analyse & optimisation</div>
+          <div class="badge">Partenariats influenceurs</div>
+        </div>
+
+        <div class="process" id="process" aria-hidden="false" style="margin-top:18px">
+          <div class="step"><strong>1. Brief</strong><div class="muted">On échange sur vos produits et objectifs.</div></div>
+          <div class="step"><strong>2. Mise en place</strong><div class="muted">Configuration, fiches produits & visuels.</div></div>
+          <div class="step"><strong>3. Lancement</strong><div class="muted">Tests, mise en ligne et paiement.</div></div>
+          <div class="step"><strong>4. Croissance</strong><div class="muted">Campagnes & suivi pour vendre plus.</div></div>
+        </div>
+      </section>
+
+      <!-- Right aside: contact form -->
+      <aside class="card" id="contact" aria-labelledby="contactHeading">
+        <h3 id="contactHeading">Contact & démarrage</h3>
+        <p class="muted">Remplissez ce formulaire — réponse sous 24h. Vous pouvez aussi m'écrire sur WhatsApp.</p>
+
+        <form id="contactForm" action="https://formspree.io/f/xldaqygj" method="POST" novalidate>
+          <label for="name">Nom complet</label>
+          <input id="name" name="name" type="text" required placeholder="Votre nom complet" />
+
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" required placeholder="votre@exemple.com" value="jcbaha58@gmail.com" />
+
+          <label for="phone">Téléphone (WhatsApp)</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+2376XXXXXXXX" value="+237699477055" />
+
+          <label for="plan">Je suis intéressé par</label>
+          <select id="plan" name="plan" aria-label="Choix du pack">
+            <option value="Starter">Starter — 8 000 FCFA / mois</option>
+            <option value="Pro">Pro — 20 000 FCFA / mois</option>
+            <option value="Premium">Premium — 45 000 FCFA / mois</option>
+            <option value="Custom">Pack sur-mesure</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Décrivez votre activité ou demandez une démo"></textarea>
+
+          <button id="submitBtn" type="submit" class="primary">Envoyer ma demande</button>
+          <div id="status" class="muted" aria-live="polite" style="margin-top:10px"></div>
+        </form>
+
+        <div style="margin-top:12px;display:flex;gap:8px;flex-direction:column">
+          <a id="waBtn" class="whatsapp" href="https://wa.me/237699477055" target="_blank" rel="noopener">Envoyer un message WhatsApp</a>
+
+          <div class="contact-meta">
+            <strong>Coordonnées</strong>
+            <div style="margin-top:8px">Schimit Baha Jean Claude<br/>WhatsApp: <span id="phoneDisplay">+237699477055</span><br/>E-mail: <span id="emailDisplay">jcbaha58@gmail.com</span></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section style="margin-top:18px">
+      <div class="card">
+        <h3>FAQ</h3>
+        <div class="faq">
+          <div>
+            <strong>Temps de lancement</strong>
+            <p class="muted">3–7 jours selon le catalogue et les visuels fournis.</p>
+          </div>
+          <div>
+            <strong>Ce qui est inclus</strong>
+            <p class="muted">Mise en ligne, optimisation produits, paramétrage paiements, formation et gestion des commandes.</p>
+          </div>
+          <div>
+            <strong>Cartes Visa virtuelles</strong>
+            <p class="muted">Accompagnement à la création et activation des cartes virtuelles pour gérer les flux et paiements.</p>
+          </div>
+          <div>
+            <strong>Partenariats influenceurs</strong>
+            <p class="muted">Connexion avec micro-influenceurs pour augmenter la visibilité et accélérer les ventes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Témoignage</h3>
+        <p class="muted">"Mise en ligne rapide, support réactif et visibilité immédiate — recommandé." — Client pilote</p>
+      </div>
+    </section>
+
+    <footer>
+      <p class="muted">© Schimit Baha Jean Claude — Création & gestion de boutiques en ligne • WhatsApp : +237699477055</p>
+    </footer>
+  </div>
+
+  <script>
+    // ---------- Helper: prefill plan when clicking CTA ----------
+    function selectPlan(name){
+      try{
+        var planEl = document.getElementById('plan');
+        if(planEl){ planEl.value = name; planEl.focus(); }
+        document.getElementById('name')?.focus();
+        // scroll to contact
+        document.getElementById('contact')?.scrollIntoView({behavior:'smooth', block:'center'});
+      }catch(e){}
+    }
+
+    // ---------- Form handling with Formspree + GA4 event ----------
+    (function(){
+      var form = document.getElementById('contactForm');
+      var status = document.getElementById('status');
+      var submitBtn = document.getElementById('submitBtn');
+
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        status.textContent = '';
+        var fd = new FormData(form);
+        var name = (fd.get('name')||'').trim();
+        var email = (fd.get('email')||'').trim();
+        var message = (fd.get('message')||'').trim();
+        if(!name || !email || (!message && !fd.get('plan'))){ status.textContent = 'Merci de renseigner votre nom, e-mail et message.'; return; }
+
+        submitBtn.disabled = true;
+        fetch(form.action, { method:'POST', body: fd, headers: { 'Accept': 'application/json' } })
+          .then(function(resp){
+            if(resp.ok){
+              status.textContent = 'Demande envoyée — réponse sous 24h.';
+              form.reset();
+              // GA4 event
+              try{ gtag('event','form_submit',{ form:'landing', plan: fd.get('plan') || 'none' }); }catch(e){}
+            } else {
+              return resp.json().then(function(j){ throw new Error(j.error || 'Erreur'); });
+            }
+          })
+          .catch(function(err){
+            // fallback mailto
+            var subject = encodeURIComponent('Demande — ' + (fd.get('plan') || 'Contact'));
+            var body = encodeURIComponent('Nom: ' + fd.get('name') + '\nEmail: ' + fd.get('email') + '\nTel: ' + fd.get('phone') + '\n\n' + (fd.get('message')||''));
+            window.open('mailto:' + encodeURIComponent('jcbaha58@gmail.com') + '?subject=' + subject + '&body=' + body, '_blank');
+            status.textContent = 'Impossible d\'envoyer en ligne — un e-mail a été ouvert en remplacement.';
+          })
+          .finally(function(){ submitBtn.disabled = false; setTimeout(()=> status.textContent = '', 7000); });
+      });
+
+      // WhatsApp button build
+      var waBtn = document.getElementById('waBtn');
+      if(waBtn){
+        waBtn.addEventListener('click', function(e){
+          // prefill based on form values
+          var name = document.getElementById('name')?.value || '[Votre nom]';
+          var phone = document.getElementById('phone')?.value || '';
+          var plan = document.getElementById('plan')?.value || 'Pro';
+          var txt = 'Bonjour, je m\\'appelle ' + name + ' - Je suis intéressé par le pack ' + plan + '. Mon WhatsApp: ' + phone;
+          var to = '237699477055';
+          var href = 'https://wa.me/' + to + '?text=' + encodeURIComponent(txt);
+          waBtn.setAttribute('href', href);
+        });
+      }
+    })();
+  </script>
+
+  <!-- noscript notice -->
+  <noscript>
+    <div style="padding:12px;background:#111;border-radius:8px;margin:16px;color:#fff;text-align:center">JavaScript est nécessaire pour envoyer le formulaire automatiquement. Vous pouvez envoyer un e-mail à jcbaha58@gmail.com.</div>
+  </noscript>
+</body>
+</html>
